@@ -8,3 +8,8 @@ before_install:
 
 script:
   - docker run moshood002/docker-react npm run test -- --watchAll=false
+
+
+deploy:
+  provider: elasticbeanstalk
+  region:
