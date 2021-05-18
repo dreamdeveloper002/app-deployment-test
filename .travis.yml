@@ -7,8 +7,7 @@ before_install:
 
 
 script:
-  - docker run moshood002/docker-react npm run test -- --watchAll=false
-
+  - docker run -e CI=true moshood002/docker-react npm run test -- --coverage
 
 deploy:
   provider: elasticbeanstalk
@@ -21,6 +20,6 @@ deploy:
   on:
     branch: master
   access_key_id: $AWS_ACCESS_KEY
-  secret_access_key: $AWS_SECRET_KEY
+  secret_access_key: "$AWS_SECRET_KEY"
 
 
